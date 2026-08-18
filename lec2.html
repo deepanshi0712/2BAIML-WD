@@ -1,0 +1,35 @@
+
+<!-- popup ke types :- prompt(),alert(),confirm() -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function sum(){
+            //  prompt use in js to take input from user
+            let age=parseInt(prompt("enter value of a:"));
+            if(age>=18){
+                alert("you are eligible for voting");
+                let c=confirm("do you want to submit your response?");
+                if(c){
+                    alert("your response has been submitted");
+                }
+                else{
+                    alert("your response has not been submitted");
+                }
+            }
+            else{
+                alert("you are not eligible");
+            }
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- input is used to call the function with value -->
+    <input type="button" onclick="sum()"value="result">
+
+    
+</body>
+</html>
