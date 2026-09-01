@@ -1,0 +1,45 @@
+<!-- user defined object in JavaScript-- -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Defined Object in JavaScript</title>
+</head>
+<body>
+
+    <h2>User Defined Object</h2>
+
+    <script>
+        // First Object
+        let student1 = {
+            name: "Anshika",
+            rollNo: 101,
+            branch: "AIML",
+
+            display: function() {
+                document.write("<h3>Student 1 Details</h3>");
+                document.write("Name: " + this.name + "<br>");
+                document.write("Roll No: " + this.rollNo + "<br>");
+                document.write("Branch: " + this.branch + "<br><br>");
+            }
+        };
+
+        // Second Object
+        let student2 = {
+            name: "Priya",
+            rollNo: 102,
+            branch: "CSE",
+
+            display: function() {
+                document.write("<h3>Student 2 Details</h3>");
+                document.write("Name: " + this.name + "<br>");
+                document.write("Roll No: " + this.rollNo + "<br>");
+                document.write("Branch: " + this.branch + "<br>");
+            }
+        };
+
+        student1.display();
+        student2.display();
+    </script>
+
+</body>
+</html>
