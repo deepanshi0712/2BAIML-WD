@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Information</title>
+</head>
+<body>
+
+<script>
+    // Creating Product Object
+    let product = {
+        productId: 101,
+        productName: "Laptop",
+        price: 50000,
+        quantity: 2,
+
+        // Method to calculate total price
+        calculateTotalPrice: function() {
+            return this.price * this.quantity;
+        },
+
+        // Method to update quantity
+        updateQuantity: function(newQty) {
+            this.quantity = newQty;
+        },
+
+        // Method to display product information
+        displayInfo: function() {
+            document.write("Product ID: " + this.productId + "<br>");
+            document.write("Product Name: " + this.productName + "<br>");
+            document.write("Price: ₹" + this.price + "<br>");
+            document.write("Quantity: " + this.quantity + "<br>");
+            document.write("Total Price: ₹" + this.calculateTotalPrice() + "<br>");
+        }
+    };
+
+    // Display original details
+    product.displayInfo();
+
+    document.write("<hr>");
+
+    // Update quantity
+    product.updateQuantity(5);
+
+    // Display updated details
+    product.displayInfo();
+</script>
+
+</body>
+</html>
