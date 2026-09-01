@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class student {
+            constructor(name, rollNo, branch) {
+                this.name = name;
+                this.rollNo = rollNo;
+                this.branch = branch;
+            }
+
+            display() {
+                document.write("<h3>Student Details</h3>");
+                document.write("Name: " + this.name + "<br>");
+                document.write("Roll No: " + this.rollNo + "<br>");
+                document.write("Branch: " + this.branch + "<br><br>");
+            }
+        }
+        let student1 = new student("Anshika", 101, "AIML");
+        let student2 = new student("Priya", 102, "CSE");
+        student1.display();
+        student2.display();
+
+    </script>
+    
+</body>
+</html>
