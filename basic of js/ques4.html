@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>E-Commerce Product System</title>
+</head>
+<body>
+	<script>
+		class Product {
+			constructor(productId, productName, price) {
+				this.productId = productId;
+				this.productName = productName;
+				this.price = price;
+			}
+
+			getDiscountedPrice(discount) {
+				return this.price-(this.price * discount / 100);
+			}
+
+			displayDetails() {
+				document.write("Product ID:" +this.productId+"<br>");
+				document.write("Product Name:"+this.productName+"<br>");
+				document.write("Price: Rs."+this.price + "<br>");
+			}
+
+			static compareProducts(p1, p2) {
+				let higherPricedProduct = p1.price > p2.price ? p1 : p2;
+				document.write("<h3>Higher-Priced Product</h3>");
+				document.write(higherPricedProduct.productName + " - Rs. " + higherPricedProduct.price + "<br><br>");
+			}
+		}
+
+		class Electronics extends Product {
+			constructor(productId, productName, price, warranty) {
+				super(productId, productName, price);
+				this.warranty = warranty;
+			}
+
+			displayDetails() {
+				super.displayDetails();
+				document.write("Warranty:"+this.warranty+"<br>");
+			}
+		}
+		let product = new Product(201, "Office Chair", 8000);
+		let electronicProduct = new Electronics(202, "Laptop", 60000, "2 years");
+
+		document.write("<h3>Product Details</h3>");
+		product.displayDetails();
+		document.write("Price after 10% discount: Rs. " + product.getDiscountedPrice(10) + "<br><br>");
+
+		document.write("<h3>Electronics Product Details</h3>");
+		electronicProduct.displayDetails();
+		document.write("Price after 15% discount: Rs. " + electronicProduct.getDiscountedPrice(15) + "<br><br>");
+		Product.compareProducts(product, electronicProduct);
+	</script>
+</body>
+</html>

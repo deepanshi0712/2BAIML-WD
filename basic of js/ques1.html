@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Student {
+            static totalStudents = 0;
+        constructor(rollNo, name, marks) {
+                this.rollNo = rollNo;
+                this.name = name;
+                this.marks = marks;
+                Student.totalStudents++;
+            }
+
+            displayResult() {
+                document.write("<h3>Student Result</h3>");
+                document.write("Roll No:"+this.rollNo+"<br>");
+                document.write("Name:"+this.name+"<br>");
+                document.write("Marks:"+this.marks+"<br>");
+                if (this.marks >= 40) {
+                    document.write("Result: Pass<br><br>");
+                } else {
+                    document.write("Result: Fail<br><br>");
+                }
+            }
+
+            static displayTotalStudents() {
+                document.write("<h3>Total Students:"+Student.totalStudents+"</h3>");
+            }
+        }
+
+        let student1 = new Student(101,"Anshika",85);
+        let student2 = new Student(102,"Priya",35);
+        let student3 = new Student(103,"Rahul",72);
+
+        student1.displayResult();
+        student2.displayResult();
+        student3.displayResult();
+        Student.displayTotalStudents();
+    </script>
+</body>
+</html>

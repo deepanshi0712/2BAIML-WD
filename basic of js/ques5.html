@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Online Cab Booking System</title>
+</head>
+<body>
+	<script>
+		class Vehicle {
+			constructor(vehicleNo, driverName, distance) {
+				this.vehicleNo = vehicleNo;
+				this.driverName = driverName;
+				this.distance = distance;
+			}
+
+			calculateFare() {
+				return 0;
+			}
+
+			static displayPlatformName() {
+				document.write("<h2>QuickRide Online Cab Booking</h2>");
+			}
+		}
+
+		class Car extends Vehicle {
+			constructor(vehicleNo, driverName, distance) {
+				super(vehicleNo, driverName, distance);
+			}
+
+			calculateFare() {
+				return this.distance * 15;
+			}
+		}
+
+		class Bike extends Vehicle {
+			constructor(vehicleNo, driverName, distance) {
+				super(vehicleNo, driverName, distance);
+			}
+
+			calculateFare() {
+				return this.distance * 8;
+			}
+		}
+
+		Vehicle.displayPlatformName();
+
+		let car = new Car("CAR101", "Anshika", 20);
+		let bike = new Bike("BIKE202", "Priya", 15);
+
+		document.write("<h3>Car Booking</h3>");
+		document.write("Vehicle No: " + car.vehicleNo + "<br>");
+		document.write("Driver Name: " + car.driverName + "<br>");
+		document.write("Distance: " + car.distance + " km<br>");
+		document.write("Fare: Rs. " + car.calculateFare() + "<br><br>");
+
+		document.write("<h3>Bike Booking</h3>");
+		document.write("Vehicle No: " + bike.vehicleNo + "<br>");
+		document.write("Driver Name: " + bike.driverName + "<br>");
+		document.write("Distance: " + bike.distance + " km<br>");
+		document.write("Fare: Rs. " + bike.calculateFare() + "<br>");
+	</script>
+</body>
+</html>
